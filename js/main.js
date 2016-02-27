@@ -109,4 +109,29 @@ $(document).ready(function(){
 		api(apiUserUrl, apiStatusUrl);
 	});
 
+
+	//add functionality to the navigation buttons
+	function optionToShow (option){
+		switch (option){
+			case "channel":
+				
+				break;
+			case "stream":
+				
+				break;
+			case "online":
+				$(".result:has(.online)").css("display","block");
+				$(".result:has(.offline)").css("display","none");
+				break;
+			case "offline":
+				$(".result:has(.offline)").css("display","block");
+				$(".result:has(.online)").css("display","none");
+				break;
+			case "all":
+				$(".result:has(.offline)").css("display","block");
+				$(".result:has(.online)").css("display","block");
+				break;
+		}
+	}
+
 });
