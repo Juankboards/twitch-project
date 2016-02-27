@@ -114,10 +114,20 @@ $(document).ready(function(){
 	function optionToShow (option){
 		switch (option){
 			case "channel":
-				
+				if (searchBy!=="channel"){
+					$(".stream").removeClass("highlight");
+					$(".channel").addClass("highlight");
+					searchBy = "channels";
+					makeSearch(searchBy, searchBox.value);
+				}
 				break;
 			case "stream":
-				
+				if (searchBy!=="stream"){
+					$(".channel").removeClass("highlight");
+					$(".stream").addClass("highlight");
+					searchBy = "streams";
+					makeSearch(searchBy, searchBox.value);
+				}
 				break;
 			case "online":
 				$(".result:has(.online)").css("display","block");
