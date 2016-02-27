@@ -81,7 +81,7 @@ html {
 
 .options{
 	font-size: 0.73em;
-	display: block;
+	display: none;
 	margin-top: 5px;
 	background-color: #FFF;
 }
@@ -145,7 +145,7 @@ html {
 
 .navigation-list-mobile{
 	z-index: 20;
-	display: block;
+	display: none;
 	position: fixed;
 	bottom: 0;
 	left: 0;
@@ -247,4 +247,84 @@ html {
 	visibility: hidden;
 	height: 0;
 	line-height: 0;
+}
+
+@media only screen and (max-width: 970px){
+	.navigation-list-mobile{
+		display: none;
+	}
+
+	.navigation-list{
+		display: block;
+	}
+
+	.navigation-mobile-element{
+		font-size: 20px;
+	}
+
+	.navigation-list{
+		width: 30%;
+	}
+
+	.option {
+		font-size: 0.94em;
+	}
+
+	.nav-page {
+		padding: 0 25px;
+		padding-top: 9px;
+	}
+}
+
+
+@media only screen and (max-width: 750px){
+	.navigation-list-mobile{
+		display: block;
+	}
+
+	.nav-page {
+		padding: 0 35px;
+		padding-top: 9px;
+	}
+
+	.navigation-list{
+		display: none;
+	}
+
+	.navigation-mobile-element{
+		font-size: 16px;
+	}
+
+	#twitch-logo > img{
+		margin-top: 0.5em;
+		height: 2em;
+	}	
+}
+
+@media only screen and (max-width: 470px){
+	.navigation-list-mobile{
+		display: block;
+	}
+
+	.nav-page {
+		padding: 0 15px;
+		padding-top: 5px;
+	}
+
+	.navigation-list{
+		display: none;
+	}
+
+	.optionMob {
+		font-size: 13px;
+	}
+
+	.navigation-mobile-element{
+		font-size: 13px;
+	}
+
+	#twitch-logo > img{
+	margin-top: 0.5em;
+	height: 2em;
+	}	
 }
