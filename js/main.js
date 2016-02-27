@@ -144,4 +144,53 @@ $(document).ready(function(){
 		}
 	}
 
+	 //make the search by channel(default) or by stream
+ function search (apiSearchUrl, searchBy){
+	if (searchBy === "channels"){
+		$.getJSON(apiSearchUrl, function(jsonSearch){
+			var names=[];
+			jsonSearch.channels.forEach(function(channel){
+				names.push(channel.name);
+			});
+
+			names.forEach(function(name){
+			apiUserUrl = "https://api.twitch.tv/kraken/users/"+name+"?callback=?";
+			apiStatusUrl = "https://api.twitch.tv/kraken/streams/"+name+"?callback=?";
+
+			$(".results").html("");
+			api(apiUserUrl, apiStatusUrl);
+			});
+		});
+	}else{
+			$.getJSON(apiSearchUrl, function(jsonSearch){
+			var names=[];
+			jsonSearch.streams.forEach(function(stream){
+				names.push(stream.channel.name);
+			});
+
+			names.forEach(function(name){
+			apiUserUrl = "https://api.twitch.tv/kraken/users/"+name+"?callback=?";
+			apiStatusUrl = "https://api.twitch.tv/kraken/streams/"+name+"?callback=?";
+
+			$(".results").html("");
+			api(apiUserUrl, apiStatusUrl);
+			});
+		});
+		}
+	}
+
+	function makeSearch (searchBy, searchBoxValue){
+		if (searchBoxValue!==""){
+			var apiSearchUrl= "https://api.twitch.tv/kraken/search/"
+	 										+ searchBy + "?q=" + searchBoxValue + "&type=suggest&limit=30";
+
+	 		search(apiSearchUrl, searchBy);
+		}
+	}
+
+
+ $("#search-form").submit(function(event) {
+  event.preventDefault();
+  makeSearch(searchBy, searchBox.value);
+ });
 });
