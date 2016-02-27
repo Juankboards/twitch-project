@@ -115,16 +115,16 @@ $(document).ready(function(){
 		switch (option){
 			case "channel":
 				if (searchBy!=="channel"){
-					$(".stream").removeClass("highlight");
 					$(".channel").addClass("highlight");
+					$(".stream").removeClass("highlight");
 					searchBy = "channels";
 					makeSearch(searchBy, searchBox.value);
 				}
 				break;
 			case "stream":
-				if (searchBy!=="stream"){
-					$(".channel").removeClass("highlight");
+				if (searchBy!=="stream"){					
 					$(".stream").addClass("highlight");
+					$(".channel").removeClass("highlight");
 					searchBy = "streams";
 					makeSearch(searchBy, searchBox.value);
 				}
