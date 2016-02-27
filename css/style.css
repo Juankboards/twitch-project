@@ -1,0 +1,144 @@
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #6441A5;
+  font-family: 'Press Start 2P', cursive;
+  text-decoration: none;
+}
+
+body, html {
+	min-height: 100%;
+	width: 100%;
+	margin: 0;
+}
+
+html {
+	background-color: #FFF9FF;
+}
+
+.wrapper{
+	width: 100%;
+	min-height: 100%;
+	margin: 0 auto;
+}
+
+.nav-page {
+	z-index: 10;
+	width: 100%;
+	height: 4em;
+	position: fixed;
+	margin: 0 auto;
+	padding: 0 150px;
+	padding-top: 10px;
+	background-color: #FFF;
+	box-shadow: 0 2px 3px -1px #9774D8;
+}
+
+
+
+#twitch-logo{
+	float: left;
+	height: 3em;
+	cursor: pointer;
+}
+
+
+#twitch-logo > img{
+	margin-top: 0.25em;
+	height: 2.5em;
+}
+
+.navigation-list{
+	width: 25%;
+	float: right;
+	height: 100%;
+	margin-right: 10px;
+}
+
+.navigation-element {
+	float: left;
+	font-size: 0.9em;
+	text-align: center;
+	height: 100%;
+	width: 50%;
+	cursor: pointer;
+	border-radius: 2px;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.navigation-element:hover {
+	background-color: #6441A5;
+	color: #FFF;
+}
+
+.navigation-element > p {
+	margin: 0;
+	height: 90%;
+	padding: 12px ;
+}
+
+.options{
+	font-size: 0.73em;
+	display: block;
+	margin-top: 5px;
+	background-color: #FFF;
+}
+
+.option {
+	padding: 20px;
+	border: 1px solid #9774D8;
+}
+
+.option > p {
+	margin: 0;
+	height: 90%;
+	padding: 0;
+}
+
+.option:hover {
+	color: #9774D8;
+}
+
+.option:first-child {
+	border: 1px solid #9774D8;
+	border-bottom: none;
+}
+
+.option:last-child {
+	border: 1px solid #9774D8;
+	border-top: none;
+	border-bottom-left-radius: 2px;
+	border-bottom-right-radius: 2px;
+}
+
+.highlight {	
+	background-color: #6441A5;	
+}
+
+.highlight > p {
+	color: #FFF;
+}
+
+
+#searchBox{
+	background-image: url(http://web-cdn.ttvnw.net/images/xarth/header_search_icon.svg);
+	background-repeat: no-repeat;
+	background-position: 3px;
+	text-indent: 25px;
+	background-color: #FFF;
+	width: 100%;
+	height: inherit;
+	border-radius: 2px;
+	border: 1px solid #D0D0D0;
+}
+
+#search-form{
+	max-width:  250px;
+	float: right;
+	width: 50%;
+	height: 2em;
+	margin-top: 0.5em;
+	margin-left: 10px;
+}
