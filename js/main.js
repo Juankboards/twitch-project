@@ -1,7 +1,15 @@
 
 
 $(document).ready(function(){
-var optionsMob;
+
+  var InitialUsers = ["freecodecamp", "stickyrice1", "comster404", "habathcx",
+								"cretetion","Swifty","noobs2ninjas","beohoff"];
+
+	var optionsMob,
+			resultsContent,
+			apiUserUrl,
+			searchBy = "channels",
+			apiStatusUrl;
 	//display the options of the navigation bar
 	$(".navigation-element").mouseover(
 		function(){
@@ -54,4 +62,51 @@ var optionsMob;
 			optionToShow(option[option.length-1]);
 		}
 	}); 
+
+
+	//extract information of the users of twitch. Use the twitch API
+	function api (apiUserUrl, apiStatusUrl){
+		$.getJSON(apiUserUrl, function(jsonInfo){
+			var userInfo={};
+
+			userInfo.resultPhoto= (jsonInfo.logo===null)?"http://www.mobilemag.com/wp-content/uploads/2012/09/twitch-tv-logo.png" : jsonInfo.logo;
+			userInfo.resultTittle = jsonInfo.display_name;
+
+
+			$.getJSON(apiStatusUrl, function(jsonStatus){
+				var userStatus;
+
+				if (jsonStatus.stream === null){
+					userStatus = "offline";
+					userInfo.resultDescription = (jsonInfo.bio===null || jsonInfo.bio==="" || jsonInfo.bio===undefined)?"This user don't has a Bio, but we know is an amazing channel" : jsonInfo.bio;
+				} else if (jsonStatus.stream === undefined) {
+					userStatus= "offline";
+					userInfo.resultDescription = "This user left us. We will miss you!"
+				}	else{
+					userStatus= "online";
+					userInfo.resultDescription = (jsonInfo.bio===null || jsonInfo.bio===undefined)?"This user don't has a Bio, but we know is an amazing channel"+"<br><br>Streaming: "+ jsonStatus.stream.channel.game + " - " + jsonStatus.stream.channel.status : jsonInfo.bio+"<br><br>Streaming: "+ jsonStatus.stream.channel.game + "-" + jsonStatus.stream.channel.status;
+				}
+
+				resultsContent = "<div class='result'><a class='' href='http://www.twitch.tv/"+ jsonInfo.name +"' target='_blank'>"
+										+ "<div class='content " + userStatus + "'><div class='channel-photo'><img src='"
+										+ userInfo.resultPhoto + "'></div><div class='channel-text'><h1 class='channel-name'>"
+										+ userInfo.resultTittle+"</h1><p class='channel-description'>"
+										+ userInfo.resultDescription + "</div></div></a></div>";
+
+				userStatus === "online"?
+				$(".results").prepend(resultsContent) :
+				$(".results").append(resultsContent)
+
+			});
+		});
+	}
+
+	//shows the information predifined Users of twitch on the initial page. 
+	InitialUsers.forEach(function(user){
+		apiUserUrl = "https://api.twitch.tv/kraken/users/"+user+"?callback=?";
+		apiStatusUrl = "https://api.twitch.tv/kraken/streams/"+user+"?callback=?";
+
+		api(apiUserUrl, apiStatusUrl);
+	});
+
 });
