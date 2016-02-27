@@ -249,6 +249,75 @@ html {
 	line-height: 0;
 }
 
+.results {
+	display: block;
+	position: relative;
+	width: 90%;
+	margin: 0 auto;
+	top: 100px;
+	padding: 50px 100px;
+	z-index: 1;
+}
+
+.result {
+	width: 100%;
+	border: 1px solid #9774D8;
+	margin-top: 10px;
+	border-radius: 5px;
+	background-image: url(https://static-cdn.jtvnw.net/jtv_user_pictures/freecodecamp-channel_offline_image-b8e133c78cd51cb0-1920x1080.png);
+
+}
+
+.content{
+	padding: 20px;
+}
+
+.offline{
+	background-color: rgba(250,150,150,0.6);
+}
+
+.online {
+	background-color: rgba(150,250,150,0.6);
+}
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	height: 0;
+	line-height: 0;
+}
+
+.channel-photo > img{
+	width: 100%;
+	border-radius: 50px;
+}
+
+.channel-photo{
+	width: 15%;
+	margin: 20px auto;
+}
+
+.channel-text{
+	width: 100%;
+	margin: 20px 0;
+	padding: 0 20px;
+	overflow: hidden;
+}
+
+.channel-description {
+	text-align: justify;
+	font-size: 0.8em
+}
+
+.channel-name{
+	margin: 10px auto;
+	cursor: pointer;
+	text-align: center;
+	font-size: 1em;
+}
+
 @media only screen and (max-width: 970px){
 	.navigation-list-mobile{
 		display: none;
@@ -273,6 +342,25 @@ html {
 	.nav-page {
 		padding: 0 25px;
 		padding-top: 9px;
+	}
+
+	.channel-photo{
+		width: 25%;
+		margin: 5px auto;
+	}
+
+	.channel-text{
+		margin: 15px 0;
+		padding: 0 10px;
+	}
+
+	.channel-description {
+		font-size: 0.9em;
+	}
+
+	.channel-name{
+		margin: 15px auto;
+		font-size: 1.4em;
 	}
 }
 
@@ -299,6 +387,29 @@ html {
 		margin-top: 0.5em;
 		height: 2em;
 	}	
+
+	.results {
+		padding: 10px 35px 70px 35px;
+	}
+
+	.channel-photo{
+		width: 35%;
+		margin: 5px auto;
+	}
+
+	.channel-text{
+		margin: 10px 0;
+		padding: 0 5px;
+	}
+
+	.channel-description {
+		font-size: 0.8em;
+	}
+
+	.channel-name{
+		margin: 10px auto;
+		font-size: 1.1em;
+	}
 }
 
 @media only screen and (max-width: 470px){
@@ -327,4 +438,23 @@ html {
 	margin-top: 0.5em;
 	height: 2em;
 	}	
+
+	.channel-photo{
+		width: 40%;
+		margin: 5px auto;
+	}
+
+	.channel-text{
+		margin: 10px 0;
+		padding: 0 5px;
+	}
+
+	.channel-description {
+		font-size: 0.46em;
+	}
+
+	.channel-name{
+		margin: 10px auto;
+		font-size: 0.9em;
+	}
 }
