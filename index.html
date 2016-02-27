@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">		
+		<title>Twitch viewer</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="nav-page">
+				<a id="twitch-logo" href="https://www.twitch.tv" target="_blank"><img src="http://blog.maniaplanet.com/wp-content/uploads/2013/03/new-twitchtv-logo.png" alt="twitch logo"></a>
+				<form id="search-form">
+					<input type="text" id="searchBox" placeholder="Search" tabindex="1" autofocus="autofocus" autocomplete="off">
+				</form>
+				<nav class="navigation-list">
+					<div id="search-opt" class="navigation-element" >
+						<p>SEARCH</p>
+						<div class="options">
+							<div class="option highlight channel"><p>CHANNEL</p></div>
+							<div class="option stream"><p>STREAM</p></div>
+						</div>
+					</div>
+					<div id="status" class="navigation-element">
+						<p>STATUS</p>
+						<div class="options">
+							<div class="option online"><p>ONLINE</p></div>
+							<div class="option offline"><p>OFFLINE</p></div>
+							<div class="option all"><p>ALL</p></div>
+						</div>
+					</div>
+					</div>
+				</nav>
+			</div>
+
+			<div class="results">
+			</div>
+			<div class="navigation-list-mobile">
+				<div id="searchMobile" class="navigation-mobile-element">
+					<p >SEARCH</p>
+				</div>
+				<div id="optionsMobSearch" class="clearfix">
+						<div class="highlight optionMobSear  optionMob channel"><p>CHANNEL</p></div>
+						<div class=" optionMobSear optionMob stream"><p>STREAM</p></div>
+				</div>
+				<div id="optionsMobStatus" class="clearfix">
+						<div class="optionMob online"><p>ONLINE</p></div>
+						<div class="optionMob offline"><p>OFFLINE</p></div>
+						<div class="optionMob all"><p>ALL</p></div>
+				</div>
+				<div id="statusMobile" class="navigation-mobile-element">
+					<p>STATUS</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
